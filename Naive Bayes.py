@@ -59,8 +59,8 @@ def trainNB(mat, category):
         else:
             p0Num += mat[i]
             p0Denom += 1
-    p1vec = p1Num / p1Denom
-    p0vec = p0Num / p0Denom
+    p1vec = np.log(p1Num / p1Denom)
+    p0vec = np.log(p0Num / p0Denom)
     return p1vec, p0vec, pClass1
     
 def classifyNB(vec2Classify, p1vec, p0vec, pClass1):
